@@ -1,6 +1,6 @@
 # ERC-20 Spot the Bug
 
-ERC-20 Spot the Bug is a collection of 20 ERC-20 implementations with a bug injected in them.
+Buggy ERC-20 is a collection of 20 ERC-20 implementations with a bug injected in them.
 
 These are serious bugs that could lead to catastrophic behavior, or significantly deviate from what the developer intended the behavior to be. Each implementation has a serious bug. While it is helpful to familiarize yourself with [weird ERC-20 tokens](https://github.com/d-xo/weird-erc20), the bugs we inserted here are much more problematic than the deviations described in the weird ERC-20 tokens repository.
 
