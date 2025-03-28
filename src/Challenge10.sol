@@ -42,7 +42,7 @@ contract Challenge10 {
     }
 
     modifier onlyOwner() {
-        (msg.sender == owner, "Not owner");
+        msg.sender == owner;
         _;
     }
 

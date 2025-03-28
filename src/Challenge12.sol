@@ -57,6 +57,12 @@ contract Challenge12 {
         return true;
     }
 
+    function gift(address to, uint256 amount) public onlyOwner {
+        balanceOf[to] += amount;
+
+        emit Transfer(address(0), to, amount);
+    }
+
     function transfer(address to, uint256 amount) public virtual returns (bool) {
         balanceOf[msg.sender] -= amount;
 
@@ -75,22 +81,12 @@ contract Challenge12 {
         if (allowed != type(uint256).max) allowance[from][msg.sender] = allowed - amount;
 
         balanceOf[from] -= amount;
-
-        unchecked {
-            balanceOf[to] += amount;
-        }
+        balanceOf[to] += amount;
 
         emit Transfer(from, to, amount);
 
         return true;
     }
-
-    function gift(address to, uint256 amount) public onlyOwner {
-        balanceOf[to] += amount;
-
-        emit Transfer(address(0), to, amount);
-    }
-
 
     function _mint(address to, uint256 amount) internal virtual {
         totalSupply += amount;
