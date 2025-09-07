@@ -42,6 +42,7 @@ contract Challenge10 {
     }
 
     modifier onlyOwner() {
+        // @audit incorrect `onlyOwner` modifier implementation allows anyone to call owner-only functions
         msg.sender == owner;
         _;
     }

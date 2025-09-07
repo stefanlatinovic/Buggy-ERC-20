@@ -136,6 +136,7 @@ contract Challenge19 {
         }
     }
 
+    // @audit Missing `_beforeTokenTransfer` and `_afterTokenTransfer` hook calls
     function _mint(address account, uint256 value) internal {
         require(account != address(0), "ERC20: mint to the zero address");
 
@@ -146,6 +147,7 @@ contract Challenge19 {
         emit Transfer(address(0), account, value);
     }
 
+    // @audit Missing `_beforeTokenTransfer` and `_afterTokenTransfer` hook calls
     function _burn(address account, uint256 value) internal {
         require(account != address(0), "ERC20: burn from the zero address");
 

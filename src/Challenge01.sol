@@ -84,6 +84,7 @@ contract Challenge01 {
         uint256 fromBalance = _balances[from];
         if (fromBalance < value) revert InsufficientBalance(from, fromBalance, value);
 
+        // @audit amount is not deducted from the `from` address
         _balances[to] += value;
         emit Transfer(from, to, value);
     }

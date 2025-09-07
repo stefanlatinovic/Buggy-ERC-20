@@ -41,6 +41,7 @@ contract Challenge13 {
     }
 
     function approve(address spender, uint256 amount) public virtual returns (bool) {
+        // @audit incorrectly updates spender -> owner instead of owner -> spender allowance
         allowance[spender][msg.sender] = amount;
 
         emit Approval(msg.sender, spender, amount);

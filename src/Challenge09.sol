@@ -58,6 +58,7 @@ contract Challenge09 {
     }
 
     function transfer(address to, uint256 amount) public returns (bool) {
+        // @audit increases sender's balance on underflow
         unchecked {
             _balances[msg.sender] -= amount;
         }

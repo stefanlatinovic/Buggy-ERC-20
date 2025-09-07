@@ -76,6 +76,7 @@ contract Challenge11 {
         _transfer(from, to, value);
         uint256 currentAllowance = _allowances[from][msg.sender];
         require(currentAllowance >= value, "Insufficient allowance");
+        // @audit incorrectly updates spender -> owner instead of owner -> spender allowance
         _allowances[msg.sender][from] = currentAllowance - value;
         return true;
     }

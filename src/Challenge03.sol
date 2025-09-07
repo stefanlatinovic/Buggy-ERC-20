@@ -36,6 +36,7 @@ contract Challenge03 {
         _mint(msg.sender, 1000000 * 10 ** 18);
     }
 
+    // @audit no access control, can be called by anyone on behalf of anyone
     function burn(address account, uint256 value) public {
         require(account != address(0), "Invalid burner");
         uint256 accountBalance = _balances[account];

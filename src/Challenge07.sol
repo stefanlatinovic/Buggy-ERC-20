@@ -90,6 +90,7 @@ contract Challenge07 {
         return true;
     }
 
+    // @audit anyone can mint tokens for themselves or someone else
     function mint(address to, uint256 value) public {
         _mint(to, value);
     }

@@ -39,6 +39,7 @@ contract Challenge02 {
         decimals = _decimals;
     }
 
+    // @audit function signature does not match ERC-20 specification `approve(address spender, uint256 amount) public returns (bool)`
     function approve(address owner, address spender, uint256 amount) public {
         allowance[owner][spender] = amount;
         emit Approval(owner, spender, amount);

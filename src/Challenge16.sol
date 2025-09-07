@@ -68,6 +68,7 @@ contract Challenge16 {
     }
 
     function approve(address spender, uint256 value) public returns (bool) {
+        // @audit allowance is not updated
         emit Approval(msg.sender, spender, value);
         return true;
     }

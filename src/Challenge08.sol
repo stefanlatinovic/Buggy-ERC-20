@@ -84,6 +84,7 @@ contract Challenge08 {
 
     function burn(uint256 value) public {
         _balances[msg.sender] -= value;
+        // @audit total supply is not decreased
         emit Transfer(msg.sender, address(0), value);
     }
 

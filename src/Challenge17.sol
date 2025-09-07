@@ -96,6 +96,7 @@ contract Challenge17 {
         require(from != address(0), "ERC20: transfer from the zero address");
         require(to != address(0), "ERC20: transfer to the zero address");
 
+        // @audit incorrect balance fetch; should fetch `from`, not `to` balance
         uint256 toBalance = _balances[to];
         require(toBalance >= value, "ERC20: transfer amount exceeds balance");
 
